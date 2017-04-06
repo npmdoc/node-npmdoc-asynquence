@@ -1,0 +1,1060 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/getify/asynquence"
+
+    >asynquence (v0.10.0)</a>
+</h1>
+<h4>promise-style async sequence flow-control</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asynquence">module asynquence</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.__schedule">
+            function <span class="apidocSignatureSpan">asynquence.</span>__schedule
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.__tapSequence">
+            function <span class="apidocSignatureSpan">asynquence.</span>__tapSequence
+            <span class="apidocSignatureSpan">(def)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq">
+            function <span class="apidocSignatureSpan">asynquence.</span>asq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.clone">
+            function <span class="apidocSignatureSpan">asynquence.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.extend">
+            function <span class="apidocSignatureSpan">asynquence.</span>extend
+            <span class="apidocSignatureSpan">(name, build)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.failed">
+            function <span class="apidocSignatureSpan">asynquence.</span>failed
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.isMessageWrapper">
+            function <span class="apidocSignatureSpan">asynquence.</span>isMessageWrapper
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.isSequence">
+            function <span class="apidocSignatureSpan">asynquence.</span>isSequence
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.messages">
+            function <span class="apidocSignatureSpan">asynquence.</span>messages
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.noConflict">
+            function <span class="apidocSignatureSpan">asynquence.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.unpause">
+            function <span class="apidocSignatureSpan">asynquence.</span>unpause
+            <span class="apidocSignatureSpan">(sq)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asynquence.asq">module asynquence.asq</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.asq">
+            function <span class="apidocSignatureSpan">asynquence.</span>asq
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.__schedule">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>__schedule
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.__tapSequence">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>__tapSequence
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.clone">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.extend">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>extend
+            <span class="apidocSignatureSpan">(e, n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.failed">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>failed
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.isMessageWrapper">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>isMessageWrapper
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.isSequence">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>isSequence
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.messages">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>messages
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.noConflict">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asynquence.asq.unpause">
+            function <span class="apidocSignatureSpan">asynquence.asq.</span>unpause
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asynquence" id="apidoc.module.asynquence">module asynquence</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.__schedule" id="apidoc.element.asynquence.__schedule">
+        function <span class="apidocSignatureSpan">asynquence.</span>__schedule
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function schedule(fn) {
+		scheduling_queue.add(fn);
+		if (!cycle) {
+			cycle = timer(scheduling_queue.drain);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.__tapSequence" id="apidoc.element.asynquence.__tapSequence">
+        function <span class="apidocSignatureSpan">asynquence.</span>__tapSequence
+        <span class="apidocSignatureSpan">(def)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tapSequence(def) {
+		// temporary `trigger` which, if called before being replaced
+		// above, creates replacement proxy sequence with the
+		// success/error message(s) pre-injected
+		function trigger() {
+			def.seq = createSequence.apply(ø,arguments).defer();
+		}
+
+		// fail trigger
+		trigger.fail = function $$trigger$fail() {
+			var args = ARRAY_SLICE.call(arguments);
+			def.seq = createSequence(function $$create$sequence(done){
+				done.fail.apply(ø,args);
+			})
+			.defer();
+		};
+
+		// listen for signals from the sequence
+		def.seq
+		// note: cannot use `seq.pipe(trigger)` because we
+		// need to be able to update the shared closure
+		// to change `trigger`
+		.val(function $$val(){
+			trigger.apply(ø,arguments);
+			return ASQmessages.apply(ø,arguments);
+		})
+		.or(function $$or(){
+			trigger.fail.apply(ø,arguments);
+		});
+
+		// make a sequence to act as a proxy to the original
+		// sequence
+		def.seq = createSequence(function $$create$sequence(done){
+			// replace the temporary trigger (created below)
+			// with this proxy&#x27;s trigger
+			trigger = done;
+		})
+		.defer();
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq" id="apidoc.element.asynquence.asq">
+        function <span class="apidocSignatureSpan">asynquence.</span>asq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSequence(){function scheduleSequenceTick(){r?sequenceTick():e||(e=schedule(sequenceTick))}function throwSequenceErrors
+(){throw 1===$.length?$[0]:$}function sequenceTick(){var a,c;if(e=null,delete d.unpause,r)clearTimeout(e),e=null,s.length=p.length
+=g.length=$.length=0;else if(n)for(0!==p.length||t||(t=!0,throwSequenceErrors());p.length;){t=!0,a=p.shift();try{a.apply(h,$)}catch
+(i){l(i)?$=$.concat(i):($.push(i),i.stack&#x26;&#x26;$.push(i.stack)),0===p.length&#x26;&#x26;throwSequenceErrors()}}else if(u&#x26;&#x26;s.length&#x3e;0){u=!1,a=s
+.shift(),c=g.slice(),g.length=0,c.unshift(createStepCompletion());try{a.apply(h,c)}catch(i){l(i)?$=$.concat(i):$.push(i),n=!0,scheduleSequenceTick
+()}}}function createStepCompletion(){function done(){n||r||u||e||(e=!0,u=!0,g.push.apply(g,arguments),$.length=0,scheduleSequenceTick
+())}done.fail=function $$step$fail(){n||r||u||e||(n=!0,g.length=0,$.push.apply($,arguments),scheduleSequenceTick())},done.abort=
+function $$step$abort(){n||r||(u=!1,r=!0,g.length=$.length=0,scheduleSequenceTick())},done.errfcb=function $$step$errfcb(e){e?done
+.fail(e):done.apply(h,f.call(arguments,1))};var e=!1;return done}function createGate(e,t,u){function resetGate(){clearTimeout(s),
+s=d=m=o=null}function scheduleGateTick(){return g?gateTick():void(s||(s=schedule(gateTick)))}function gateTick(){if(!(n||r||$)){
+var t=[];s=null,p?(e.fail.apply(h,o),resetGate()):g?(e.abort(),resetGate()):checkGate()&#x26;&#x26;($=!0,d.forEach(function $$each(e,n){t.
+push(m[&#x22;s&#x22;+n])}),e.apply(h,t),resetGate())}}function checkGate(){if(0!==d.length){var e=!0;return d.some(function $$some(n){return
+ null===n?(e=!1,!0):void 0}),e}}function createSegmentCompletion(){function done(){if(!(n||r||p||g||$||d[e])){var t=c.apply(h,arguments
+);m[&#x22;s&#x22;+e]=t.length&#x3e;1?t:t[0],d[e]=!0,scheduleGateTick()}}var e=d.length;return done.fail=function $$segment$fail(){n||r||p||g||$||
+d[e]||(p=!0,o=f.call(arguments),scheduleGateTick())},done.abort=function $$segment$abort(){n||r||p||g||$||(g=!0,gateTick())},done
+.errfcb=function $$segment$errfcb(e){e?done.fail(e):done.apply(h,f.call(arguments,1))},d[e]=null,done}var a,i,o,s,p=!1,g=!1,$=!1
+,d=[],m={};t.some(function $$some(e){if(p||g)return!0;a=u.slice(),a.unshift(createSegmentCompletion());try{e.apply(h,a)}catch(n){
+return i=n,p=!0,!0}}),i&#x26;&#x26;(l(i)?e.fail.apply(h,i):e.fail(i))}function then(){return n||r||0===arguments.length?d:(wrapArgs(arguments
+,thenWrapper).forEach(function $$each(e){i(e)?seq(e):s.push(e)}),scheduleSequenceTick(),d)}function or(){return r||0===arguments
+.length?d:(p.push.apply(p,arguments),scheduleSequenceTick(),d)}function gate(){if(n||r||0===arguments.length)return d;var e=f.call
+(arguments).map(function $$map(e){var n;return i(e)?(n={seq:e},tapSequence(n),function $$segment(e){n.seq.pipe(e)}):e});return then
+(function $$then(n){var t=f.call(arguments,1);createGate(n,e,t)}),d}function pipe(){return r||0===arguments.length?d:(f.call(arguments
+).forEach(function $$each(e){then(function $$then(n){e.apply(h,f.call(arguments,1)),n()}).or(e.fail)}),d)}function seq(){return
+n||r||0===arguments.length?d:(f.call(arguments).forEach(function $$each(e){var n={seq:e};i(e)&#x26;&#x26;tapSequence(n),then(function $$then
+(e){var t=n.seq;i(t)||(t=n.seq.apply(h,f.call(arguments,1))),t.pipe(e)})}),d)}function val(){return n||r||0===arguments.length?d
+:(f.call(wrapArgs(arguments,valWrapper)).forEach(function $$each(e){then(function $$then(n){var t=e.apply(h,f.call(arguments,1));
+l(t)||(t=c(t)),n.apply(h,t)})}),d)}function promise(){function wrap(e){return function $$fn(){e.apply(h,l(arguments[0])?arguments
+[0]:arguments)}}return n||r||0===arguments.length?d:(f.call(arguments).forEach(function $$each(e){then(function $$then(n){var t=
+e;&#x22;function&#x22;==typeof e&#x26;&#x26;&#x22;function&#x22;!=typeof e.then&#x26;&#x26;(t=e.apply(h,f.call(arguments,1))),t.then(wrap(n),wrap(n.fail))})}),d)}function
+ fork(){var e;return val(function $$val(){return e?e.apply(h,arguments):e=createSequence.apply(h,arguments).defer(),c.apply(h,arguments
+)}),or(function $$or(){if(e)e.fail.apply(h,arguments);else{var n=f.call(arguments);e=createSequence().then(function $$then(e){e.
+fail.apply(h,n)}).def ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.clone" id="apidoc.element.asynquence.clone">
+        function <span class="apidocSignatureSpan">asynquence.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$clone() {
+		return DEF(name,context);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+
+`ASQ.noConflict()` rolls back the global `ASQ` identifier and returns the current API instance to you. This can be used to keep
+your global namespace clean, or it can be used to have multiple simultaneous libraries (including separate versions/copies of *asynquence
+*!) in the same program without conflicts over the `ASQ` global identifier.
+
+`ASQ.<span class="apidocCodeKeywordSpan">clone</span>()` creates a fresh, clean copy of *asynquence*. This is primarily useful if
+ you want to have different *asynquence* copies which are each extended with different plugins (see below).
+
+**Note:** In node.js, if you load contrib bundle(s) from the standard top-level package location (`./node_modules/asynquence-contrib
+/a-bundle-file.js`), it will automatically look for and load (if found) the peer *asynquence* top-level package (`./node_modules
+/asynquence/`) and return it. So as a shortcut, you could simply do: `var ASQ = require(&#x22;asynquence-contrib&#x22;)` instead
+ of loading both packages separately.
+
+However, if you load contrib bundle(s) that cannot find a peer *asynquence* top-level package to load and use, a dependency-injection
+ function is instead returned, which expects to be called with either an *asynquence* instance, or a relative path specifying where
+ to load it.
+
+In node, we can use the npm package `freshy` to let us reload the *asynquence* package to get a fresh copy of it, for each bundle
+ to attach to:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.extend" id="apidoc.element.asynquence.extend">
+        function <span class="apidocSignatureSpan">asynquence.</span>extend
+        <span class="apidocSignatureSpan">(name, build)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$extend(name, build) {
+		extensions[name] = build;
+
+		return createSequence;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+&#x3c;script&#x3e;ASQ = ASQ2;&#x3c;/script&#x3e;
+&#x3c;script src=&#x22;./path/to/bundle2.js&#x22;&#x3e;&#x3c;/script&#x3e;
+```
+
+### Plugin Extensions
+
+`ASQ.<span class="apidocCodeKeywordSpan">extend</span>( {name}, {build} )` allows you to specify an API extension, giving it a `
+name` and a `build` function callback that should return the implementation of your API extension. The `build` callback is provided
+ two parameters, the sequence `api` instance, and an `internals(..)` method, which lets you get or set values of various internal
+ properties (generally, don&#x27;t use this if you can avoid it).
+
+Example:
+
+```js
+// &#x22;foobar&#x22; plugin, which injects message &#x22;foobar!&#x22;
+// into the sequence stream
+ASQ.extend(&#x22;foobar&#x22;,function __build__(api,internals){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.failed" id="apidoc.element.asynquence.failed">
+        function <span class="apidocSignatureSpan">asynquence.</span>failed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$failed() {
+		var args = ASQmessages.apply(ø,arguments);
+		return createSequence(function $$failed(){ throw args; }).defer();
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    `ASQ(function(done){ somethingAsync(done.errfcb); })` is sugar short-hand for `ASQ(function(done){ somethingAsync(function(err
+){ if (err) done.fail(err); else done.apply(null,[].slice.call(arguments,1))}); })`.
+
+You can also `abort()` a sequence at any time, which will prevent any further actions from occurring on that sequence (all callbacks
+ will be ignored). The call to `abort()` can happen on the sequence API itself, or using the `abort` flag on a completion trigger
+ in any step (see example below).
+
+#### API Static Functions
+
+`ASQ.<span class="apidocCodeKeywordSpan">failed</span>(..)` produces a sequence which is already in the failed state. If you pass
+ messages along to `failed(..)`, they will be the error messages for the sequence.
+
+`ASQ.messages(..)` wraps a set of values as a ASQ-branded array, making it easier to pass multiple messages at once, and also to
+ make it easier to distinguish a normal array (a value) from a value-messages container array, using `ASQ.isMessageWrapper(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.isMessageWrapper" id="apidoc.element.asynquence.isMessageWrapper">
+        function <span class="apidocSignatureSpan">asynquence.</span>isMessageWrapper
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$isMessageWrapper(val) {
+		return checkBranding(val) &#x26;&#x26; Array.isArray(val);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can also `abort()` a sequence at any time, which will prevent any further actions from occurring on that sequence (all callbacks
+ will be ignored). The call to `abort()` can happen on the sequence API itself, or using the `abort` flag on a completion trigger
+ in any step (see example below).
+
+#### API Static Functions
+
+`ASQ.failed(..)` produces a sequence which is already in the failed state. If you pass messages along to `failed(..)`, they will
+ be the error messages for the sequence.
+
+`ASQ.messages(..)` wraps a set of values as a ASQ-branded array, making it easier to pass multiple messages at once, and also to
+ make it easier to distinguish a normal array (a value) from a value-messages container array, using `ASQ.<span class="apidocCodeKeywordSpan
+">isMessageWrapper</span>(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.isSequence" id="apidoc.element.asynquence.isSequence">
+        function <span class="apidocSignatureSpan">asynquence.</span>isSequence
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$isSequence(val) {
+		return checkBranding(val) &#x26;&#x26; !Array.isArray(val);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### API Static Functions
+
+`ASQ.failed(..)` produces a sequence which is already in the failed state. If you pass messages along to `failed(..)`, they will
+ be the error messages for the sequence.
+
+`ASQ.messages(..)` wraps a set of values as a ASQ-branded array, making it easier to pass multiple messages at once, and also to
+ make it easier to distinguish a normal array (a value) from a value-messages container array, using `ASQ.isMessageWrapper(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.<span class="apidocCodeKeywordSpan">isSequence
+</span>(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+
+`ASQ.noConflict()` rolls back the global `ASQ` identifier and returns the current API instance to you. This can be used to keep
+your global namespace clean, or it can be used to have multiple simultaneous libraries (including separate versions/copies of *asynquence
+*!) in the same program without conflicts over the `ASQ` global identifier.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.messages" id="apidoc.element.asynquence.messages">
+        function <span class="apidocSignatureSpan">asynquence.</span>messages
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$messages() {
+		var ret = ARRAY_SLICE.call(arguments);
+		// brand the message wrapper so we can detect
+		return brandIt(ret);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can also `abort()` a sequence at any time, which will prevent any further actions from occurring on that sequence (all callbacks
+ will be ignored). The call to `abort()` can happen on the sequence API itself, or using the `abort` flag on a completion trigger
+ in any step (see example below).
+
+#### API Static Functions
+
+`ASQ.failed(..)` produces a sequence which is already in the failed state. If you pass messages along to `failed(..)`, they will
+ be the error messages for the sequence.
+
+`ASQ.<span class="apidocCodeKeywordSpan">messages</span>(..)` wraps a set of values as a ASQ-branded array, making it easier to
+pass multiple messages at once, and also to make it easier to distinguish a normal array (a value) from a value-messages container
+ array, using `ASQ.isMessageWrapper(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.noConflict" id="apidoc.element.asynquence.noConflict">
+        function <span class="apidocSignatureSpan">asynquence.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$noConflict() {
+		if (context) {
+			context[name] = old_public_api;
+		}
+		return createSequence;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+
+`ASQ.<span class="apidocCodeKeywordSpan">noConflict</span>()` rolls back the global `ASQ` identifier and returns the current API
+ instance to you. This can be used to keep your global namespace clean, or it can be used to have multiple simultaneous libraries
+ (including separate versions/copies of *asynquence*!) in the same program without conflicts over the `ASQ` global identifier.
+
+`ASQ.clone()` creates a fresh, clean copy of *asynquence*. This is primarily useful if you want to have different *asynquence* copies
+ which are each extended with different plugins (see below).
+
+**Note:** In node.js, if you load contrib bundle(s) from the standard top-level package location (`./node_modules/asynquence-contrib
+/a-bundle-file.js`), it will automatically look for and load (if found) the peer *asynquence* top-level package (`./node_modules
+/asynquence/`) and return it. So as a shortcut, you could simply do: `var ASQ = require(&#x22;asynquence-contrib&#x22;)` instead
+ of loading both packages separately.
+
+However, if you load contrib bundle(s) that cannot find a peer *asynquence* top-level package to load and use, a dependency-injection
+ function is instead returned, which expects to be called with either an *asynquence* instance, or a relative path specifying where
+ to load it.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.unpause" id="apidoc.element.asynquence.unpause">
+        function <span class="apidocSignatureSpan">asynquence.</span>unpause
+        <span class="apidocSignatureSpan">(sq)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$unpause(sq) {
+		if (sq.unpause) sq.unpause();
+		return sq;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**Note:** Unlike most other API methods, `fork()` returns a new sequence instance, so chaining after `fork()` would not be chaining
+ off of the main sequence but off the forked sequence.
+
+`Sq.fork()` is (sort-of) sugar short-hand for `ASQ().seq(Sq)`.
+
+* `duplicate()` creates a separate copy of the current sequence (as it is at that moment). The duplicated sequence is &#x22;paused
+&#x22;, meaning it won&#x27;t automatically run, even if the original sequence is already running.
+
+To unpause the paused sequence-copy, call `unpause()` on it. The other option is to call the helper `ASQ.<span class="apidocCodeKeywordSpan
+">unpause</span>(..)` and pass in a sequence. If the sequence is paused, it will be unpaused (and if not, just passes through safely
+).
+
+**Note:** Technically, `unpause()` schedules the sequence to be unpaused as the next &#x22;tick&#x22;, so it doesn&#x27;t really
+ unpause *immediately* (synchronously). This is consistent with all other calls to the API (`ASQ()`, `then()`, `gate()`, etc), which
+ all schedule procession of the sequence on the next &#x22;tick&#x22;.
+
+The instance form of `unpause(..)` (not `ASQ.unpause(..)`) will accept any arguments sent to it and pass them along as messages
+to the first step of the sequence, each time it&#x27;s invoked. This allows you to setup different templated (duplicated) sequences
+ with distinct initial message states, if necessary.
+
+`unpause()` is only present on a sequence API in this initial paused state after it was duplicated from another sequence. It is
+removed as soon as that next &#x22;tick&#x22; actually unpauses the sequence. It is safe to call multiple times until that next &#
+x22;tick&#x22;, though that&#x27;s not recommended. The `ASQ.unpause(..)` helper is always present, and it first checks for an `
+unpause()` on the specified sequence instance before calling it, so that&#x27;s safer.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asynquence.asq" id="apidoc.module.asynquence.asq">module asynquence.asq</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.asq" id="apidoc.element.asynquence.asq.asq">
+        function <span class="apidocSignatureSpan">asynquence.</span>asq
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSequence(){function scheduleSequenceTick(){r?sequenceTick():e||(e=schedule(sequenceTick))}function throwSequenceErrors
+(){throw 1===$.length?$[0]:$}function sequenceTick(){var a,c;if(e=null,delete d.unpause,r)clearTimeout(e),e=null,s.length=p.length
+=g.length=$.length=0;else if(n)for(0!==p.length||t||(t=!0,throwSequenceErrors());p.length;){t=!0,a=p.shift();try{a.apply(h,$)}catch
+(i){l(i)?$=$.concat(i):($.push(i),i.stack&#x26;&#x26;$.push(i.stack)),0===p.length&#x26;&#x26;throwSequenceErrors()}}else if(u&#x26;&#x26;s.length&#x3e;0){u=!1,a=s
+.shift(),c=g.slice(),g.length=0,c.unshift(createStepCompletion());try{a.apply(h,c)}catch(i){l(i)?$=$.concat(i):$.push(i),n=!0,scheduleSequenceTick
+()}}}function createStepCompletion(){function done(){n||r||u||e||(e=!0,u=!0,g.push.apply(g,arguments),$.length=0,scheduleSequenceTick
+())}done.fail=function $$step$fail(){n||r||u||e||(n=!0,g.length=0,$.push.apply($,arguments),scheduleSequenceTick())},done.abort=
+function $$step$abort(){n||r||(u=!1,r=!0,g.length=$.length=0,scheduleSequenceTick())},done.errfcb=function $$step$errfcb(e){e?done
+.fail(e):done.apply(h,f.call(arguments,1))};var e=!1;return done}function createGate(e,t,u){function resetGate(){clearTimeout(s),
+s=d=m=o=null}function scheduleGateTick(){return g?gateTick():void(s||(s=schedule(gateTick)))}function gateTick(){if(!(n||r||$)){
+var t=[];s=null,p?(e.fail.apply(h,o),resetGate()):g?(e.abort(),resetGate()):checkGate()&#x26;&#x26;($=!0,d.forEach(function $$each(e,n){t.
+push(m[&#x22;s&#x22;+n])}),e.apply(h,t),resetGate())}}function checkGate(){if(0!==d.length){var e=!0;return d.some(function $$some(n){return
+ null===n?(e=!1,!0):void 0}),e}}function createSegmentCompletion(){function done(){if(!(n||r||p||g||$||d[e])){var t=c.apply(h,arguments
+);m[&#x22;s&#x22;+e]=t.length&#x3e;1?t:t[0],d[e]=!0,scheduleGateTick()}}var e=d.length;return done.fail=function $$segment$fail(){n||r||p||g||$||
+d[e]||(p=!0,o=f.call(arguments),scheduleGateTick())},done.abort=function $$segment$abort(){n||r||p||g||$||(g=!0,gateTick())},done
+.errfcb=function $$segment$errfcb(e){e?done.fail(e):done.apply(h,f.call(arguments,1))},d[e]=null,done}var a,i,o,s,p=!1,g=!1,$=!1
+,d=[],m={};t.some(function $$some(e){if(p||g)return!0;a=u.slice(),a.unshift(createSegmentCompletion());try{e.apply(h,a)}catch(n){
+return i=n,p=!0,!0}}),i&#x26;&#x26;(l(i)?e.fail.apply(h,i):e.fail(i))}function then(){return n||r||0===arguments.length?d:(wrapArgs(arguments
+,thenWrapper).forEach(function $$each(e){i(e)?seq(e):s.push(e)}),scheduleSequenceTick(),d)}function or(){return r||0===arguments
+.length?d:(p.push.apply(p,arguments),scheduleSequenceTick(),d)}function gate(){if(n||r||0===arguments.length)return d;var e=f.call
+(arguments).map(function $$map(e){var n;return i(e)?(n={seq:e},tapSequence(n),function $$segment(e){n.seq.pipe(e)}):e});return then
+(function $$then(n){var t=f.call(arguments,1);createGate(n,e,t)}),d}function pipe(){return r||0===arguments.length?d:(f.call(arguments
+).forEach(function $$each(e){then(function $$then(n){e.apply(h,f.call(arguments,1)),n()}).or(e.fail)}),d)}function seq(){return
+n||r||0===arguments.length?d:(f.call(arguments).forEach(function $$each(e){var n={seq:e};i(e)&#x26;&#x26;tapSequence(n),then(function $$then
+(e){var t=n.seq;i(t)||(t=n.seq.apply(h,f.call(arguments,1))),t.pipe(e)})}),d)}function val(){return n||r||0===arguments.length?d
+:(f.call(wrapArgs(arguments,valWrapper)).forEach(function $$each(e){then(function $$then(n){var t=e.apply(h,f.call(arguments,1));
+l(t)||(t=c(t)),n.apply(h,t)})}),d)}function promise(){function wrap(e){return function $$fn(){e.apply(h,l(arguments[0])?arguments
+[0]:arguments)}}return n||r||0===arguments.length?d:(f.call(arguments).forEach(function $$each(e){then(function $$then(n){var t=
+e;&#x22;function&#x22;==typeof e&#x26;&#x26;&#x22;function&#x22;!=typeof e.then&#x26;&#x26;(t=e.apply(h,f.call(arguments,1))),t.then(wrap(n),wrap(n.fail))})}),d)}function
+ fork(){var e;return val(function $$val(){return e?e.apply(h,arguments):e=createSequence.apply(h,arguments).defer(),c.apply(h,arguments
+)}),or(function $$or(){if(e)e.fail.apply(h,arguments);else{var n=f.call(arguments);e=createSequence().then(function $$then(e){e.
+fail.apply(h,n)}).def ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.__schedule" id="apidoc.element.asynquence.asq.__schedule">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>__schedule
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function schedule(e){r.add(e),t||(t=u(r.drain))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.__tapSequence" id="apidoc.element.asynquence.asq.__tapSequence">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>__tapSequence
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tapSequence(e){function trigger(){e.seq=createSequence.apply(h,arguments).defer()}trigger.fail=function $$trigger$fail(){
+var n=f.call(arguments);e.seq=createSequence(function $$create$sequence(e){e.fail.apply(h,n)}).defer()},e.seq.val(function $$val
+(){return trigger.apply(h,arguments),c.apply(h,arguments)}).or(function $$or(){trigger.fail.apply(h,arguments)}),e.seq=createSequence
+(function $$create$sequence(e){trigger=e}).defer()}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.clone" id="apidoc.element.asynquence.asq.clone">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$clone(){return DEF(e,n)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+
+`ASQ.noConflict()` rolls back the global `ASQ` identifier and returns the current API instance to you. This can be used to keep
+your global namespace clean, or it can be used to have multiple simultaneous libraries (including separate versions/copies of *asynquence
+*!) in the same program without conflicts over the `ASQ` global identifier.
+
+`ASQ.<span class="apidocCodeKeywordSpan">clone</span>()` creates a fresh, clean copy of *asynquence*. This is primarily useful if
+ you want to have different *asynquence* copies which are each extended with different plugins (see below).
+
+**Note:** In node.js, if you load contrib bundle(s) from the standard top-level package location (`./node_modules/asynquence-contrib
+/a-bundle-file.js`), it will automatically look for and load (if found) the peer *asynquence* top-level package (`./node_modules
+/asynquence/`) and return it. So as a shortcut, you could simply do: `var ASQ = require(&#x22;asynquence-contrib&#x22;)` instead
+ of loading both packages separately.
+
+However, if you load contrib bundle(s) that cannot find a peer *asynquence* top-level package to load and use, a dependency-injection
+ function is instead returned, which expects to be called with either an *asynquence* instance, or a relative path specifying where
+ to load it.
+
+In node, we can use the npm package `freshy` to let us reload the *asynquence* package to get a fresh copy of it, for each bundle
+ to attach to:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.extend" id="apidoc.element.asynquence.asq.extend">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>extend
+        <span class="apidocSignatureSpan">(e, n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$extend(e, n){return o[e]=n,createSequence}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+&#x3c;script&#x3e;ASQ = ASQ2;&#x3c;/script&#x3e;
+&#x3c;script src=&#x22;./path/to/bundle2.js&#x22;&#x3e;&#x3c;/script&#x3e;
+```
+
+### Plugin Extensions
+
+`ASQ.<span class="apidocCodeKeywordSpan">extend</span>( {name}, {build} )` allows you to specify an API extension, giving it a `
+name` and a `build` function callback that should return the implementation of your API extension. The `build` callback is provided
+ two parameters, the sequence `api` instance, and an `internals(..)` method, which lets you get or set values of various internal
+ properties (generally, don&#x27;t use this if you can avoid it).
+
+Example:
+
+```js
+// &#x22;foobar&#x22; plugin, which injects message &#x22;foobar!&#x22;
+// into the sequence stream
+ASQ.extend(&#x22;foobar&#x22;,function __build__(api,internals){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.failed" id="apidoc.element.asynquence.asq.failed">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>failed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$failed(){var e=c.apply(h,arguments);return createSequence(function $$failed(){throw e}).defer()}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    `ASQ(function(done){ somethingAsync(done.errfcb); })` is sugar short-hand for `ASQ(function(done){ somethingAsync(function(err
+){ if (err) done.fail(err); else done.apply(null,[].slice.call(arguments,1))}); })`.
+
+You can also `abort()` a sequence at any time, which will prevent any further actions from occurring on that sequence (all callbacks
+ will be ignored). The call to `abort()` can happen on the sequence API itself, or using the `abort` flag on a completion trigger
+ in any step (see example below).
+
+#### API Static Functions
+
+`ASQ.<span class="apidocCodeKeywordSpan">failed</span>(..)` produces a sequence which is already in the failed state. If you pass
+ messages along to `failed(..)`, they will be the error messages for the sequence.
+
+`ASQ.messages(..)` wraps a set of values as a ASQ-branded array, making it easier to pass multiple messages at once, and also to
+ make it easier to distinguish a normal array (a value) from a value-messages container array, using `ASQ.isMessageWrapper(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.isMessageWrapper" id="apidoc.element.asynquence.asq.isMessageWrapper">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>isMessageWrapper
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$isMessageWrapper(e){return checkBranding(e)&#x26;&#x26;Array.isArray(e)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can also `abort()` a sequence at any time, which will prevent any further actions from occurring on that sequence (all callbacks
+ will be ignored). The call to `abort()` can happen on the sequence API itself, or using the `abort` flag on a completion trigger
+ in any step (see example below).
+
+#### API Static Functions
+
+`ASQ.failed(..)` produces a sequence which is already in the failed state. If you pass messages along to `failed(..)`, they will
+ be the error messages for the sequence.
+
+`ASQ.messages(..)` wraps a set of values as a ASQ-branded array, making it easier to pass multiple messages at once, and also to
+ make it easier to distinguish a normal array (a value) from a value-messages container array, using `ASQ.<span class="apidocCodeKeywordSpan
+">isMessageWrapper</span>(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.isSequence" id="apidoc.element.asynquence.asq.isSequence">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>isSequence
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$isSequence(e){return checkBranding(e)&#x26;&#x26;!Array.isArray(e)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### API Static Functions
+
+`ASQ.failed(..)` produces a sequence which is already in the failed state. If you pass messages along to `failed(..)`, they will
+ be the error messages for the sequence.
+
+`ASQ.messages(..)` wraps a set of values as a ASQ-branded array, making it easier to pass multiple messages at once, and also to
+ make it easier to distinguish a normal array (a value) from a value-messages container array, using `ASQ.isMessageWrapper(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.<span class="apidocCodeKeywordSpan">isSequence
+</span>(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+
+`ASQ.noConflict()` rolls back the global `ASQ` identifier and returns the current API instance to you. This can be used to keep
+your global namespace clean, or it can be used to have multiple simultaneous libraries (including separate versions/copies of *asynquence
+*!) in the same program without conflicts over the `ASQ` global identifier.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.messages" id="apidoc.element.asynquence.asq.messages">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>messages
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$messages(){var e=f.call(arguments);return brandIt(e)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can also `abort()` a sequence at any time, which will prevent any further actions from occurring on that sequence (all callbacks
+ will be ignored). The call to `abort()` can happen on the sequence API itself, or using the `abort` flag on a completion trigger
+ in any step (see example below).
+
+#### API Static Functions
+
+`ASQ.failed(..)` produces a sequence which is already in the failed state. If you pass messages along to `failed(..)`, they will
+ be the error messages for the sequence.
+
+`ASQ.<span class="apidocCodeKeywordSpan">messages</span>(..)` wraps a set of values as a ASQ-branded array, making it easier to
+pass multiple messages at once, and also to make it easier to distinguish a normal array (a value) from a value-messages container
+ array, using `ASQ.isMessageWrapper(..)`.
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.noConflict" id="apidoc.element.asynquence.asq.noConflict">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$noConflict(){return n&#x26;&#x26;(n[e]=s),createSequence}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+If you want to test if any arbitrary object is an *asynquence* sequence instance, use `ASQ.isSequence(..)`.
+
+`ASQ.iterable(..)` is added by the `iterable-sequence` contrib plugin. See [Iterable Sequences](#iterable-sequences) below for more
+ information.
+
+`ASQ.unpause(..)` is a helper for dealing with &#x22;paused&#x22; (aka, *just* duplicated) sequences (see `duplicate()` above).
+
+`ASQ.<span class="apidocCodeKeywordSpan">noConflict</span>()` rolls back the global `ASQ` identifier and returns the current API
+ instance to you. This can be used to keep your global namespace clean, or it can be used to have multiple simultaneous libraries
+ (including separate versions/copies of *asynquence*!) in the same program without conflicts over the `ASQ` global identifier.
+
+`ASQ.clone()` creates a fresh, clean copy of *asynquence*. This is primarily useful if you want to have different *asynquence* copies
+ which are each extended with different plugins (see below).
+
+**Note:** In node.js, if you load contrib bundle(s) from the standard top-level package location (`./node_modules/asynquence-contrib
+/a-bundle-file.js`), it will automatically look for and load (if found) the peer *asynquence* top-level package (`./node_modules
+/asynquence/`) and return it. So as a shortcut, you could simply do: `var ASQ = require(&#x22;asynquence-contrib&#x22;)` instead
+ of loading both packages separately.
+
+However, if you load contrib bundle(s) that cannot find a peer *asynquence* top-level package to load and use, a dependency-injection
+ function is instead returned, which expects to be called with either an *asynquence* instance, or a relative path specifying where
+ to load it.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asynquence.asq.unpause" id="apidoc.element.asynquence.asq.unpause">
+        function <span class="apidocSignatureSpan">asynquence.asq.</span>unpause
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function $$public$unpause(e){return e.unpause&#x26;&#x26;e.unpause(),e}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**Note:** Unlike most other API methods, `fork()` returns a new sequence instance, so chaining after `fork()` would not be chaining
+ off of the main sequence but off the forked sequence.
+
+`Sq.fork()` is (sort-of) sugar short-hand for `ASQ().seq(Sq)`.
+
+* `duplicate()` creates a separate copy of the current sequence (as it is at that moment). The duplicated sequence is &#x22;paused
+&#x22;, meaning it won&#x27;t automatically run, even if the original sequence is already running.
+
+To unpause the paused sequence-copy, call `unpause()` on it. The other option is to call the helper `ASQ.<span class="apidocCodeKeywordSpan
+">unpause</span>(..)` and pass in a sequence. If the sequence is paused, it will be unpaused (and if not, just passes through safely
+).
+
+**Note:** Technically, `unpause()` schedules the sequence to be unpaused as the next &#x22;tick&#x22;, so it doesn&#x27;t really
+ unpause *immediately* (synchronously). This is consistent with all other calls to the API (`ASQ()`, `then()`, `gate()`, etc), which
+ all schedule procession of the sequence on the next &#x22;tick&#x22;.
+
+The instance form of `unpause(..)` (not `ASQ.unpause(..)`) will accept any arguments sent to it and pass them along as messages
+to the first step of the sequence, each time it&#x27;s invoked. This allows you to setup different templated (duplicated) sequences
+ with distinct initial message states, if necessary.
+
+`unpause()` is only present on a sequence API in this initial paused state after it was duplicated from another sequence. It is
+removed as soon as that next &#x22;tick&#x22; actually unpauses the sequence. It is safe to call multiple times until that next &#
+x22;tick&#x22;, though that&#x27;s not recommended. The `ASQ.unpause(..)` helper is always present, and it first checks for an `
+unpause()` on the specified sequence instance before calling it, so that&#x27;s safer.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
