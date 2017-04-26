@@ -1,6 +1,6 @@
 # npmdoc-asynquence
 
-#### api documentation for  [asynquence (v0.10.0)](http://github.com/getify/asynquence)  [![npm package](https://img.shields.io/npm/v/npmdoc-asynquence.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-asynquence) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-asynquence.svg)](https://travis-ci.org/npmdoc/node-npmdoc-asynquence)
+#### basic api documentation for  [asynquence (v0.10.0)](http://github.com/getify/asynquence)  [![npm package](https://img.shields.io/npm/v/npmdoc-asynquence.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-asynquence) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-asynquence.svg)](https://travis-ci.org/npmdoc/node-npmdoc-asynquence)
 
 #### promise-style async sequence flow-control
 
@@ -69,7 +69,8 @@
         "prepublish": "npm run build-core",
         "test": "./node-tests.js"
     },
-    "version": "0.10.0"
+    "version": "0.10.0",
+    "bin": {}
 }
 ```
 
